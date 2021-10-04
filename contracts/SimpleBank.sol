@@ -60,9 +60,14 @@ contract SimpleBank {
 
     /// @notice Enroll a customer with the bank
     /// @return The users enrolled status
-    // Emit the appropriate event
+    // Emit the apprtopriate event
     function enroll() public returns (bool){
       // 1. enroll of the sender of this transaction
+      enrolled[msg.sender] = true;
+
+      //emit LogEnrolled(msg.sender);
+      
+      return enrolled[msg.sender];
     }
 
     /// @notice Deposit ether into bank
